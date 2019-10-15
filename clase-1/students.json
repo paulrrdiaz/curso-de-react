@@ -1,0 +1,49 @@
+{
+  "students": [
+    {
+      "name": "Aldair Valencia",
+      "company": "Teleatento",
+      "background": "Estudiante - VI ciclo"
+    },
+    {
+      "name": "Carlos Terrones",
+      "company": "Rimac Seguros",
+      "background": "FulStack"
+    },
+    {
+      "name": "Carlos Salas",
+      "company": "Ariadna",
+      "background": "FullStack"
+    },
+    {
+      "name": "Renan Chacallaza",
+      "company": "Parque del Recuerdo",
+      "background": "Arquitecto - Developer"
+    },
+    {
+      "name": "Daniel Segura",
+      "company": "BCP",
+      "background": "UI Developer"
+    },
+    {
+      "name": "Jose Caceres",
+      "company": "Lab Lansier",
+      "background": "Analista programador"
+    },
+    {
+      "name": "Luis Ruiz",
+      "company": "Freelance",
+      "background": "FullStack"
+    },
+    {
+      "name": "Andres Saavedra",
+      "company": "Estudiante",
+      "background": "Cibertec"
+    },
+    {
+      "name": "Edwin Allcca",
+      "company": "Sr Burns",
+      "background": "Fullstack"
+    }
+  ]
+}
