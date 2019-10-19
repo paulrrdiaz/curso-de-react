@@ -60,11 +60,23 @@ h2 {
   margin-bottom: 0.5em;
 }
 
+code {
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 4px;
+  padding: 10px 20px;
+  display: block;
+  margin-top: 10px;
+}
+
 .app-wrapper {
   width: 90%;
   max-width: 1024px;
   margin: 0 auto;
   position: relative;
+}
+
+.app-wrapper + .app-wrapper {
+  margin-top: 40px;
 }
 
 .student {

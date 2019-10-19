@@ -1,8 +1,7 @@
 import React from "react";
 import { render } from "react-dom";
-import { Student } from "./components/Student";
-
-const root = document.getElementById("root");
+import Student from "./components/Student";
+import { GeoContainer } from "./components/GeoContainer";
 
 const Title = () => (
   <h1 id="hello-world" className="app-title">
@@ -26,7 +25,10 @@ const App = () => (
         background="Estudiante"
       />
     </div>
+    <div className="app-wrapper">
+      <GeoContainer />
+    </div>
   </div>
 );
 
-render(<App />, root);
+render(React.createElement(App), document.getElementById("root"));
