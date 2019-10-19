@@ -6,3 +6,5 @@ export const GeoPresentational = ({ lat, lng }) => (
     <div>{lng}</div>
   </div>
 );
+
+npx create-react-app students

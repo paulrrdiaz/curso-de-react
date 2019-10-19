@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { GeoPresentational } from "./GeoPresentational";
+
 export class GeoContainer extends Component {
   constructor(props) {
     super(props);
@@ -23,7 +24,7 @@ export class GeoContainer extends Component {
       navigator.geolocation.getCurrentPosition(this.handlePosition);
     }
   }
-  
+
   handlePosition({ coords }) {
     const { latitude, longitude } = coords;
 
@@ -35,6 +36,7 @@ export class GeoContainer extends Component {
       });
     }, 2000);
   }
+
   render() {
     const { lat, lng, isLoading } = this.state;
     return isLoading ? (
