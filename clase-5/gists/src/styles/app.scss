@@ -1,0 +1,11 @@
+$peru: peru;
+
+.gist {
+  &__title {
+    color: palegreen;
+  }
+
+  &__text {
+    color: $peru;
+  }
+}
