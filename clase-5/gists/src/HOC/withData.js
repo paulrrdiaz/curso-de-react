@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
+import isArray from "lodash/isArray";
 import Loader from "../components/Loader";
 
 export default WrappedComponent => url => {
@@ -14,8 +15,8 @@ export default WrappedComponent => url => {
 
     async fetchData() {
       const API = typeof url === "function" ? url(this.props) : url;
-      const { data } = await axios.get(API);
-      console.log(data, "from withData HOC");
+      const fetched = await axios.get(API);
+      const data = isArray(fetched.data) ? fetched.data : fetched.data.results;
 
       setTimeout(() => {
         this.setState({
