@@ -1,17 +1,27 @@
 const initialCounterState = {
-  count: 0,
-}
+  count: 0
+};
 
 const counterReducer = (state = initialCounterState, action) => {
-  if (action.type === "ADD") {
-    const { payload: { amount } } = action;
-
+  if (action.type === "INCREMENT") {
     return {
-      count: state.count + amount
-    }
+      count: state.count + 1
+    };
   }
 
-  return state
-}
+  if (action.type === "DECREMENT") {
+    return {
+      count: state.count - 1
+    };
+  }
 
-export default counterReducer
+  if (action.type === "RESET") {
+    return {
+      count: initialCounterState.count
+    };
+  }
+
+  return state;
+};
+
+export default counterReducer;

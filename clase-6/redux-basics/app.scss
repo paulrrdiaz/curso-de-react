@@ -273,3 +273,18 @@ section > div {
     font-size: 15rem;
   }
 }
+
+.validator {
+  transition: background-color 0.3s ease-in-out 0s;
+  position: fixed;
+  z-index: 5;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 50px;
+  background-color: rgba(var(--casandoraColor), 0.5);
+
+  &.is-odd {
+    background-color: rgba(var(--imperialPrimerColor), 0.5);
+  }
+}
