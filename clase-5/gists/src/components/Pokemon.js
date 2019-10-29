@@ -1,10 +1,10 @@
 import React from "react";
+import { Link } from "@reach/router";
 import Pokemon from "../assets/images/pokemon.png";
 import styled from "@emotion/styled";
 
-const PokemonWrapper = styled("a")`
-  background-color: ${props =>
-    props.name === "charmander" ? "red" : "rgba(0, 0, 0, 0.5)"};
+const PokemonWrapper = styled(Link)`
+  background-color: rgba(0, 0, 0, 0.5);
   border-radius: 4px;
   display: flex;
   padding: 10px;
@@ -19,7 +19,7 @@ const PokemonPicture = styled.picture`
 
 export default ({ name }) => {
   return (
-    <PokemonWrapper name={name} href="/">
+    <PokemonWrapper to={`/pokemon/${name}`}>
       <PokemonPicture>
         <img src={Pokemon} alt={name} />
       </PokemonPicture>

@@ -18,11 +18,9 @@ export default WrappedComponent => url => {
       const fetched = await axios.get(API);
       const data = isArray(fetched.data) ? fetched.data : fetched.data.results;
 
-      setTimeout(() => {
-        this.setState({
-          data
-        });
-      }, 1000);
+      this.setState({
+        data
+      });
     }
 
     render() {
