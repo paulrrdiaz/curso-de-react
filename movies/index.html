@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="style.css">
+  <title>Movies</title>
+  <script src="https://unpkg.com/react@16.11.0/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@16.11.0/umd/react-dom.development.js"></script>
+</head>
+<body>
+  <div id="root">Not rendered</div>
+  <script>
+    const root = document.getElementById('root')
+
+    const Title = () => {
+      return React.createElement('h1', null, 'Hello React')
+    }
+
+    ReactDOM.render(React.createElement(Title), root);
+
+    /* 
+    const root = document.getElementById('root')
+    const title = document.createElement('h1')
+    title.innerHTML = "Hello Area 51"
+
+    root.replaceWith(title)
+     */
+  </script>
+</body>
+</html>
