@@ -1,7 +1,7 @@
 import React from "react";
 import { render } from "react-dom";
-import { Provider } from "react-redux";
 import { createStore } from "redux";
+import { Provider } from "react-redux";
 
 import "./app.scss";
 import reducers from "./store";
@@ -13,7 +13,6 @@ const store = createStore(
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 );
 
-console.log(ValidatorContainer);
 const App = () => {
   return (
     <div className="app-wrapper">
