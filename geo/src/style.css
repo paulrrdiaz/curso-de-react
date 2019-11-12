@@ -139,6 +139,10 @@ section > div {
   display: flex;
 }
 
+.user + .user {
+  margin-top: 0.5rem;
+}
+
 .user h3 {
   font-weight: 700;
   font-size: 1.4em;
