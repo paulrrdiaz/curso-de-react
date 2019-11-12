@@ -135,6 +135,36 @@ section > div {
   border-radius: 50%;
 }
 
+.user {
+  display: flex;
+}
+
+.user h3 {
+  font-weight: 700;
+  font-size: 1.4em;
+  margin-bottom: 0.05em;
+}
+
+.user p {
+  font-weight: 400;
+  font-size: 0.9em;
+}
+
+.user small {
+  font-weight: 300;
+  font-size: 0.7em;
+  text-transform: uppercase;
+}
+
+.user picture {
+  margin-right: 10px;
+}
+
+.user picture img {
+  border-radius: 50%;
+  max-width: 80px;
+}
+
 .form {
   display: flex;
   align-items: center;
