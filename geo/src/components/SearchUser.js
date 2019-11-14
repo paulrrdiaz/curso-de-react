@@ -12,18 +12,18 @@ export default class extends Component {
 
   handleChange(e) {
     const { value } = e.target;
-    const { handleFilter } = this.props;
+    const { filter } = this.props;
 
     this.setState({
       value
     });
 
-    handleFilter(value);
+    filter(value);
   }
 
   render() {
     const { value } = this.state;
-    const { handleFilter } = this.props;
+    const { filter } = this.props;
     return (
       <form className="form">
         <input
@@ -33,7 +33,7 @@ export default class extends Component {
           type="text"
           placeholder="Search an user"
         />
-        <button onClick={handleFilter} type="button" className="button">
+        <button onClick={filter} type="button" className="button">
           Search
         </button>
       </form>

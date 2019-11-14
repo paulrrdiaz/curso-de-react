@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import fuzzysearch from "fuzzysearch";
+import debounce from "lodash/debounce";
 
 import UsersList from "../components/UsersList";
 import SearchUser from "../components/SearchUser";
@@ -25,7 +26,6 @@ class UsersContainer extends Component {
       })
       .then(data => {
         const { results } = data;
-        console.log(results);
 
         this.setState({
           users: results
@@ -52,9 +52,13 @@ class UsersContainer extends Component {
   render() {
     const { users, filteredUsers } = this.state;
     const currentUsers = filteredUsers.length ? filteredUsers : users;
+    const debounceFilter = debounce(e => {
+      this.handleFilter(e);
+    }, 1000);
+
     return (
       <React.Fragment>
-        <SearchUser handleFilter={this.handleFilter} />
+        <SearchUser filter={debounceFilter} />
         <UsersList users={currentUsers} />
       </React.Fragment>
     );
