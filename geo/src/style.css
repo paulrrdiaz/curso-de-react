@@ -175,6 +175,7 @@ section > div {
   border-radius: 4px;
   padding: 30px;
   background-color: rgba(var(--blackColor), 0.15);
+  margin-bottom: 2em;
 }
 
 .form .label {
