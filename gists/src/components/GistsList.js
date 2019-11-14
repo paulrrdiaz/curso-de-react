@@ -1,7 +1,7 @@
 import React from "react";
 import Gist from "src/components/Gist";
 
-export default ({ gists = [] }) => {
+export default ({ data: gists = [] }) => {
   return (
     <div className="gists">
       {gists.map(gist => (
