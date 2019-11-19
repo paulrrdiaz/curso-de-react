@@ -1,0 +1,16 @@
+@import url("https://fonts.googleapis.com/css?family=Dosis:300,400,700&display=swap");
+
+body {
+  font-family: $font-main;
+}
+
+.app-wrapper {
+  margin: 0 auto;
+  max-width: 960%;
+  position: relative;
+  width: 90%;
+  background-color: rgba($blue, 0.5);
+
+  display: flex;
+  justify-content: space-between;
+}
