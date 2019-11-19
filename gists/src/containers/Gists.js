@@ -1,42 +1,30 @@
 import React, { Component } from "react";
-import axios from "axios";
 import GistsList from "src/components/GistsList";
-import withGists from "src/HOCs/withGists";
+import UsersList from "src/components/UsersList";
+import withData from "src/HOCs/withData";
 
-const GIST_API = "https://api.github.com/users/gaearon/gists";
+.some-class {background: red;padding: 2em;border: 1px solid black;}
+
+const users = ["gaearon", "paulrrdiaz", "GrahamcOfBorg"];
 
 export default class extends Component {
-  state = {
-    gists: []
-  };
-
-  componentDidMount() {
-    this.fetchGist();
-  }
-
-  fetchGist = async () => {
-    const { data } = await axios.get(GIST_API);
-
-    this.setState({
-      gists: data
-    });
-  };
-
   render() {
-    const { greeting, gists } = this.state;
-    const userUrl = "https://api.github.com/users/paulrrdiaz/gists";
     const getUrl = user => `https://api.github.com/users/${user}/gists`;
-
-    const GistsListWithData = withGists(userUrl)(GistsList);
-    const GistsListWithDataURL = withGists(getUrl)(GistsList);
+    const GistsListWithData = withData(getUrl)(GistsList);
+    const UsersListWithData = withData(
+      "https://jsonplaceholder.typicode.com/users"
+    )(UsersList);
 
     return (
       <div className="gists">
         <h1>Gists</h1>
         <div className="app-wrapper">
-          <GistsList data={gists} />
-          <GistsListWithData />
-          <GistsListWithDataURL user="GrahamcOfBorg" />
+          {users.map((user, index) => (
+            <GistsListWithData key={`user-${index + 1}`} user={user} />
+          ))}
+        </div>
+        <div className="app-wrapper">
+          <UsersListWithData />
         </div>
       </div>
     );

@@ -137,6 +137,7 @@ section > div {
 
 .user {
   display: flex;
+  background-color: rgba(var(--casandoraColor), 0.15);
 }
 
 .user + .user {

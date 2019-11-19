@@ -2,8 +2,7 @@ import React, { Component } from "react";
 import axios from "axios";
 import isNull from "lodash/isNull";
 
-const withGists = url => WrappedComponent => {
-  console.log(url);
+const withData = url => WrappedComponent => {
   return class extends Component {
     state = {
       data: null
@@ -15,8 +14,9 @@ const withGists = url => WrappedComponent => {
 
     fetchData = async () => {
       const { user } = this.props;
-      const API = typeof url === 'function' ? url(user) : url
+      const API = typeof url === "function" ? url(user) : url;
       const { data } = await axios.get(API);
+      console.log(data);
 
       this.setState({
         data
@@ -30,4 +30,4 @@ const withGists = url => WrappedComponent => {
   };
 };
 
-export default withGists;
+export default withData;

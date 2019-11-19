@@ -1,5 +1,5 @@
-import React from 'react';
-import Gists from 'src/containers/Gists'
+import React from "react";
+import Gists from "src/containers/Gists";
 
 function App() {
   return (
