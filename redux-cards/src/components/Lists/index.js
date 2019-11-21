@@ -1,13 +1,13 @@
 import React from "react";
 
 import { Lists } from "./styles";
-import List from "components/List";
+import List from "containers/List";
 
-export default () => {
+export default ({ lists = [] }) => {
   return (
     <Lists>
-      {[1, 2, 3].map(id => (
-        <List key={id} />
+      {lists.map(id => (
+        <List listId={id} key={id} />
       ))}
     </Lists>
   );

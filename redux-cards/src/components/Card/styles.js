@@ -21,7 +21,7 @@ export const CardTitle = styled.h4`
   margin-bottom: 0.5em;
 `;
 
-export const CardDescription = styled.h4`
+export const CardDescription = styled.p`
   font-size: 0.75rem;
   font-weight: 300;
   line-height: 1.4;

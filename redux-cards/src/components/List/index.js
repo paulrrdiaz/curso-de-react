@@ -4,12 +4,12 @@ import { List, ListTitle } from "./styles";
 import Card from "components/Card";
 import CreateCard from "components/CreateCard";
 
-export default ({ title = "Default List's title" }) => {
+export default ({ title, cards }) => {
   return (
     <List>
-      <ListTitle>{title}</ListTitle>
+      <ListTitle>{title || ""}</ListTitle>
       <CreateCard />
-      {[1, 2].map(id => (
+      {cards.map(id => (
         <Card key={id} />
       ))}
     </List>

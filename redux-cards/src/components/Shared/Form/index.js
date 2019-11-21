@@ -24,8 +24,10 @@ const getBackground = ({ looks }) => {
   switch (looks) {
     case "danger":
       return "rgba(var(--red), 0.9)";
+    case "success":
+      return "rgba(var(--blue), 0.9)";
     default:
-      return "rgba(var(--black), 0.5)";
+      return "rgba(var(--black), 0.9)";
   }
 };
 
@@ -68,4 +70,5 @@ export const Input = styled.input`
 export const Textarea = styled.textarea`
   ${input}
   height: 80px;
+  resize: none;
 `;

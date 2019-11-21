@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "@emotion/styled";
 
-import Lists from "components/Lists";
+import Lists from "containers/Lists";
 import Users from "components/Users";
 import CreateList from "components/CreateList";
 

@@ -17,6 +17,6 @@ storiesOf("Card Component", module).add(
     />
   ),
   {
-    notes: "Component with props"
+    notes: "Component with props, sirve para mostrar información"
   }
 );
