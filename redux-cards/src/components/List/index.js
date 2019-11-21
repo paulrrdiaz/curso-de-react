@@ -1,7 +1,7 @@
 import React from "react";
 
 import { List, ListTitle } from "./styles";
-import Card from "components/Card";
+import Card from "containers/Card";
 import CreateCard from "components/CreateCard";
 
 export default ({ title, cards }) => {
@@ -10,7 +10,7 @@ export default ({ title, cards }) => {
       <ListTitle>{title || ""}</ListTitle>
       <CreateCard />
       {cards.map(id => (
-        <Card key={id} />
+        <Card cardId={id} key={id} />
       ))}
     </List>
   );
