@@ -2,7 +2,7 @@ import React from "react";
 import styled from "@emotion/styled";
 
 import Lists from "containers/Lists";
-import Users from "components/Users";
+import Users from "containers/Users";
 import CreateList from "components/CreateList";
 
 const Board = styled.section`

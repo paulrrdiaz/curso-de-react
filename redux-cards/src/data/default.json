@@ -51,6 +51,11 @@
       "id": "2",
       "name": "Area51",
       "email": "info@area51.pe"
+    },
+    {
+      "id": "3",
+      "name": "Chuck Norris",
+      "email": "chuck@norris.pe"
     }
   ]
 }

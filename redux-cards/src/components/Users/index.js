@@ -1,16 +1,16 @@
 import React from "react";
 
 import CreateUser from "components/CreateUser";
-import User from "components/User";
+import User from "containers/User";
 import { UsersTitle } from "./styles";
 
-export default () => {
+export default ({ users }) => {
   return (
     <div>
       <UsersTitle>Users</UsersTitle>
       <CreateUser />
-      {[1, 2].map(id => (
-        <User key={id} />
+      {users.map(id => (
+        <User userId={id} key={id} />
       ))}
     </div>
   );
