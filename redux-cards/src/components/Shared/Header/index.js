@@ -16,6 +16,9 @@ export default () => {
           <li>
             <NavListLink to="/login">Login</NavListLink>
           </li>
+          <li>
+            <NavListLink to="/drinks">Drinks</NavListLink>
+          </li>
         </NavList>
       </nav>
     </Header>

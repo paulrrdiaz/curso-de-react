@@ -6,6 +6,7 @@ import Header from "components/Shared/Header";
 import Home from "pages/Home";
 import Board from "pages/Board";
 import Login from "pages/Login";
+import Drinks from "pages/Drinks";
 import GlobalStyles from "./styles";
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
           <Home path="/" />
           <Board path="/board" />
           <Login path="/login" />
+          <Drinks path="/drinks" />
         </Router>
       </main>
     </>
