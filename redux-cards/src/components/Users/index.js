@@ -1,6 +1,6 @@
 import React from "react";
 
-import CreateUser from "components/CreateUser";
+import CreateUser from "containers/CreateUser";
 import User from "containers/User";
 import { UsersTitle } from "./styles";
 

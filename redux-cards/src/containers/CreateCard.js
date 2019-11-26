@@ -1,22 +1,14 @@
-import CreateCard from "components/CreateCard";
 import { connect } from "react-redux";
-import { v4 } from "uuid";
+import { bindActionCreators } from "redux";
+import CreateCard from "components/CreateCard";
+import { addCard } from "store/actions/cards";
 
-const mapDispatchToProps = dispatch => {
-  return {
-    addCard(card, listId) {
-      const action = {
-        type: "ADD_CARD",
-        payload: {
-          card,
-          cardId: v4(),
-          listId
-        }
-      };
-
-      dispatch(action);
-    }
-  };
-};
+const mapDispatchToProps = dispatch =>
+  bindActionCreators(
+    {
+      addCard
+    },
+    dispatch
+  );
 
 export default connect(null, mapDispatchToProps)(CreateCard);
