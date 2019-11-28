@@ -1,43 +1,32 @@
 import React from "react";
-import { withFormik } from "formik";
+import { withFormik, ErrorMessage } from "formik";
+import * as yup from 'yup'
 import { Form, FormControl, Input, Button } from "components/Shared/Form";
 import { Auth, AuthTitle } from "./styles";
 
-const AuthForm = props => {
-  const {
-    handleChange,
-    handleBlur,
-    handleSubmit,
-    errors,
-    touched,
-    values: { username, password }
-  } = props;
+const MyErrorComponent = (props) => {
+  return <p>{props.children}</p>
+}
 
+const AuthForm = () => {
   return (
     <Auth>
       <AuthTitle>Please, try to pass my security 😉</AuthTitle>
-      <Form onSubmit={handleSubmit} direction="column">
+      <Form direction="column">
         <FormControl>
           <Input
-            onChange={handleChange}
-            onBlur={handleBlur}
-            value={username}
             name="username"
-            required
             placeholder="Email"
-            type="text"
           />
-          {touched.username && errors.username && <p>{errors.username}</p>}
+          <ErrorMessage name="username" component={MyErrorComponent} />
         </FormControl>
         <FormControl>
           <Input
-            onChange={handleChange}
-            value={password}
             name="password"
-            required
             placeholder="Password"
             type="password"
           />
+          <ErrorMessage name="password" component={MyErrorComponent} />
         </FormControl>
         <FormControl>
           <Button type="submit">Log In</Button>
@@ -48,21 +37,10 @@ const AuthForm = props => {
 };
 
 const formikConf = {
-  mapPropsToValues: ({ username }) => ({
-    username: username || "",
-    password: ""
+  validationSchema: () => yup.object().shape({
+    username: yup.string().min(5).required("Email es un campo requerido"),
+    password: yup.string().min(5, "mínimo 5 letras").max(10, "máximo 10 letras").required("Password es un campo requerido"),
   }),
-  validate: values => {
-    const errors = {};
-
-    if (!values.username) {
-      errors.username = "Es requerido";
-    } else if (values.username.length < 5) {
-      errors.username = "Necesitas más letras";
-    }
-
-    return errors;
-  },
   handleSubmit: values => {
     console.log(values);
   }

@@ -1,7 +1,8 @@
 import { css } from "@emotion/core";
 import styled from "@emotion/styled";
+import { Field, Form as FormFormik } from 'formik'
 
-export const Form = styled.form`
+export const Form = styled(FormFormik)`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -63,7 +64,7 @@ const input = css`
   }
 `;
 
-export const Input = styled.input`
+export const Input = styled(Field)`
   ${input}
 `;
 

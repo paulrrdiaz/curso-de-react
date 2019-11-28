@@ -1,45 +1,46 @@
-import React, { Component } from "react";
+import React from "react";
+import { withFormik } from 'formik'
 import Drink from "components/Drink";
 import { Form, Button, Input } from "components/Shared/Form";
+import styled from '@emotion/styled'
 
-export default class extends Component {
-  state = {
-    drink: ""
-  };
+const DrinksList = styled('div')`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+`
 
-  handleSubmit = e => {
-    e.preventDefault();
-    const { searchDrinks } = this.props;
-    const { drink } = this.state;
-    searchDrinks(drink);
-  };
+const DrinkForm = (props) => {
+  const { drinks = [] } = props;
 
-  handleChange = e => {
-    this.setState({
-      drink: e.target.value
-    });
-  };
+  return (
+    <div>
+      <Form>
+        <Input
+          name="base"
+          type="text"
+          placeholder="Enter a base"
+        />
+        <Button type="submit">Search</Button>
+      </Form>
+      <DrinksList>
+        {drinks.map(drink => (
+          <Drink key={drink.idDrink} {...drink} />
+        )) }
+      </DrinksList>
+    </div>
+  );
+}
 
-  render() {
-    console.log(this.props);
-    const { drinks = [] } = this.props;
-
-    return (
-      <div>
-        <Form onSubmit={this.handleSubmit}>
-          <Input
-            onChange={this.handleChange}
-            type="text"
-            placeholder="Enter a base"
-          />
-          <Button type="submit">Search</Button>
-        </Form>
-        <ul>
-          {drinks.map(drink => (
-            <Drink key={drink.idDrink} {...drink} />
-          ))}
-        </ul>
-      </div>
-    );
+const formikConfig = {
+  mapValuestoProps: () => ({
+    base: ""
+  }),
+  handleSubmit: ({ base }, { props }) => {
+    const { searchDrinks } = props;
+    
+    searchDrinks(base)
   }
 }
+
+export default withFormik(formikConfig)(DrinkForm)
