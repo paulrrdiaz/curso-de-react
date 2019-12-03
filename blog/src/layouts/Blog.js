@@ -1,11 +1,17 @@
 import React from 'react'
 import { MDXRenderer } from "gatsby-plugin-mdx"
+import Helmet from 'react-helmet'
 
 export default ({ pageContext }) => {
-  const { title, body } = pageContext
+  const { title, body } = pageContext;
 
-  return <div>
-    <h1>{title}</h1>
-    <MDXRenderer>{body}</MDXRenderer>
-  </div>
+  return (
+    <>
+      <Helmet title={title} />
+      <div>
+        <h1>{title}</h1>
+        <MDXRenderer>{body}</MDXRenderer>
+      </div>
+    </>
+  );
 }

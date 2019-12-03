@@ -137,6 +137,7 @@ section > div {
 
 .user {
   display: flex;
+  background-color: rgba(var(--casandoraColor), 0.15);
 }
 
 .user + .user {
@@ -175,6 +176,7 @@ section > div {
   border-radius: 4px;
   padding: 30px;
   background-color: rgba(var(--blackColor), 0.15);
+  margin-bottom: 2em;
 }
 
 .form .label {
@@ -212,6 +214,7 @@ section > div {
   display: block;
   color: rgb(var(--whiteColor));
   text-decoration: none;
+  margin-bottom: 10px;
 }
 
 .gist__title {
